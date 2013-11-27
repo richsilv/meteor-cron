@@ -28,7 +28,7 @@ _.extend(Cron.prototype, {
     
     _.each(self._jobs, function(job) {
       job.count += 1;
-      if (job.count === job.every) {
+      if (job.count >= job.every) {
         job.fn();
         job.count = 0;
       }
