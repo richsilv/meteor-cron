@@ -1,5 +1,7 @@
 # Cron
 
+A tiny amendment to tmeasday's very useful meteor-cron package.  I experienced a problem in which cron timing counters were exceeding their own targets (i.e. a counter reaches 16 even though it should run every 15 minutes), at which point the job will never run again without a server restart as the original meteor-cron only tests for equality.  This fork corrects that behaviour.
+
 ## Use
 
 Adds a simple cron interface to meteor. I'm fairly sure there is a better way to do this, but this works.
